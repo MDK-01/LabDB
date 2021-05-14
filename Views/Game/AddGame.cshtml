@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Добавить игру";
+}
+
+@using(Html.BeginForm("Add", "Game", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td><p>Название: </p></td>
+            <td><input type="text" name="name"/> </td>
+        </tr>
+        <tr>
+            <td><p>Цена: </p></td>
+            <td><input type="text" name="price"/> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Отправить"/> </td>
+            <td></td>
+        </tr>
+    </table>
+}

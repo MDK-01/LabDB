@@ -1,0 +1,30 @@
+﻿@using DBApp.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <table class='table'>
+        <tr>
+            <td><b>Идентификатор</b></td>
+            <td><b>Название</b></td>
+            <td><b>Цена</b></td>
+        </tr>
+        @foreach (Game g in Model)
+        {
+            <tr>
+                <td><p>@g.Id</p></td>
+                <td><p>@g.Name</p></td>
+                <td><p>@g.Price</p></td>
+                <td>
+               @using(Html.BeginForm("Delete", "Game", FormMethod.Post))
+               {
+                   <input type="hidden" value="@g.Id" name="id" />
+                   <input type="submit" value="Удалить"/>
+               }
+                </td>
+            </tr>
+            
+        }
+    </table>
+</div>
